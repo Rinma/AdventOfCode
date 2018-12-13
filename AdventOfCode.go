@@ -3,6 +3,7 @@ package main
 import (
 	"AdventOfCode/day01"
 	"AdventOfCode/day02"
+	"AdventOfCode/day03"
 	"fmt"
 	"io/ioutil"
 	"log"
@@ -24,6 +25,13 @@ func main() {
 	}
 	day02part1(string(day02input))
 	day02part2(string(day02input))
+
+	// DAY 03
+	day03input, err := ioutil.ReadFile("day03/input.txt")
+	if err != nil {
+		log.Fatal(err)
+	}
+	day03part1(string(day03input))
 }
 
 func day01part1(input string) {
@@ -49,4 +57,10 @@ func day02part2(input string) {
 	result := day02.FindSimilar(input)
 
 	fmt.Printf("Result of Day02 part 2 is: %s\n", result)
+}
+
+func day03part1(input string) {
+	result := day03.CalculateOverlappingAreas(input)
+
+	fmt.Printf("Result of Day03 part 1 is: %d\n", result)
 }
